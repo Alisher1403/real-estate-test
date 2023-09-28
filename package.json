@@ -25,11 +25,13 @@
     "uuid": "^9.0.0"
   },
   "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm start\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "msw-init": "npx msw init public/ --save"
+    "msw-init": "npx msw init public/ --save",
+    "server": "json-server -w server/db.json -p 8080"
   },
   "eslintConfig": {
     "extends": [
@@ -58,7 +60,9 @@
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "@types/uuid": "^8.3.4",
+    "concurrently": "^8.2.1",
     "react-scripts": "^5.0.1",
     "typescript": "^4.4.2"
-  }
+  },
+  "proxy": "http://localhost:8080"
 }

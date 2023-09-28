@@ -97,7 +97,7 @@ export const TodoListPage = () => {
   const { setLoader } = useLoader();
 
   const handler = useArrayPaginator(
-    async () => await fetchApi("/api/v1/todos"),
+    async () => await fetchApi("http://localhost:8080/users"),
     {
       onLoadStart: () => setLoader(true),
       onLoadEnd: () => setLoader(false),
